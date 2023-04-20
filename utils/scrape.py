@@ -93,7 +93,6 @@ def get_uf_data(rows: ResultSet[Tag]) -> Data:
     Returns:
         Data: Diccionario con los valores de la UF para todos los días del mes correspondiente a la fecha ingresada.
     """
-
     data = {}
     for uf in rows:
         if type(day := uf.find("th")) == Tag:

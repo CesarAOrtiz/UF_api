@@ -1,7 +1,8 @@
 import unittest
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
-from utils.scrape import get_rows
+from utils import get_rows
+
 
 class TestGetRows(unittest.TestCase):
     def test_get_rows(self):

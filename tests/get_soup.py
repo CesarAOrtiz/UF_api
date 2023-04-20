@@ -2,7 +2,7 @@ import unittest
 from datetime import datetime
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
-from utils.scrape import get_soup
+from utils import get_soup
 
 
 class TestGetSoup(unittest.TestCase):

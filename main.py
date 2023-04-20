@@ -3,8 +3,8 @@ from fastapi.responses import JSONResponse
 from fastapi.middleware.cors import CORSMiddleware
 from starlette.exceptions import HTTPException as StarletteHTTPException
 from starlette.requests import Request
-from utils.response import ErrorResponse, Response
-from utils.scrape import get_rows, get_soup, get_uf_data, get_uf_for_date, validate_date
+from utils import (ErrorResponse, Response, get_rows, get_soup,
+                   get_uf_data, get_uf_for_date, validate_date)
 
 app = FastAPI()
 

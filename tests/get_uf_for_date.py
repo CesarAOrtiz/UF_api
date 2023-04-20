@@ -2,7 +2,7 @@ import unittest
 from datetime import datetime
 from bs4 import BeautifulSoup
 from fastapi import HTTPException
-from utils.scrape import get_uf_data, get_uf_for_date, get_rows
+from utils import get_uf_data, get_uf_for_date, get_rows
 
 
 class TestGetUfForDate(unittest.TestCase):

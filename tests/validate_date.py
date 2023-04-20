@@ -7,9 +7,9 @@ from utils.scrape import validate_date
 class TestValidateDate(unittest.TestCase):
     def test_valid_date(self):
         # Testeamos la función validate_date con casos válidos e inválidos
+        date = "10-04-2023"
 
         # Caso válido
-        date = "10-04-2023"
         expected_output = datetime(2023, 4, 10)
         self.assertEqual(validate_date(date), expected_output)
 

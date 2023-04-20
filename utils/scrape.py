@@ -2,7 +2,7 @@ from datetime import datetime
 from typing import List
 from bs4 import BeautifulSoup, ResultSet, Tag
 from fastapi import HTTPException
-from services.http_client import RequestsHttpClient
+from services.http_client import UrllibHttpClient, RequestsHttpClient
 from services.http_parser import BeautifulsoupHtmlParser
 from services.scraper import WebScraper
 from utils.errors import HTTPRequestError
@@ -12,7 +12,7 @@ Data = dict[str, List[str]]
 base_url = "https://www.sii.cl/valores_y_fechas/uf/uf{}.htm"
 min_date = datetime.strptime("01-01-2013", "%d-%m-%Y")
 
-http_client = RequestsHttpClient()
+http_client = UrllibHttpClient()
 html_parser = BeautifulsoupHtmlParser()
 scraper = WebScraper(http_client, html_parser)
 

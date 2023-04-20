@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
 import requests
-
+from utils.errors import HTTPRequestError
 
 class IHttpClient(ABC):
     """
@@ -36,8 +36,11 @@ class RequestsHttpClient(IHttpClient):
             str: El contenido de la respuesta HTTP como una cadena de texto.
 
         Raises:
-            HTTPError: Si se produce un error al hacer la solicitud HTTP.
+            HTTPRequestError: Si se produce un error al hacer la solicitud HTTP.
         """
-        response = requests.get(url)
-        response.raise_for_status()
-        return response.text
+        try:
+            response = requests.get(url)
+            response.raise_for_status()
+            return response.text
+        except requests.HTTPError as e:
+            raise HTTPRequestError(e.response.status_code, e.response.text) from e

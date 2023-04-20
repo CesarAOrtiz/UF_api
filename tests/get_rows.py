@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 from fastapi import HTTPException
 from utils.scrape import get_rows
 
-
 class TestGetRows(unittest.TestCase):
     def test_get_rows(self):
         # Testeamos la función get_rows con una tabla válida e inválida

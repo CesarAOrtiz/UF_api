@@ -2,8 +2,8 @@ from datetime import datetime
 from typing import List
 from bs4 import BeautifulSoup, ResultSet, Tag
 from fastapi import HTTPException
-import requests
 from services import RequestsHttpClient, BeautifulsoupHtmlParser, WebScraper
+from utils.errors import HTTPRequestError
 
 Data = dict[str, List[str]]
 
@@ -58,7 +58,7 @@ def get_soup(date: datetime) -> BeautifulSoup:
     try:
         url = base_url.format(date.year)
         return scraper.scrape(url)
-    except requests.HTTPError:
+    except HTTPRequestError:
         raise HTTPException(
             status_code=500, detail="No se pudo obtener la página HTML de la URL especificada.")
 

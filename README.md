@@ -9,13 +9,13 @@ Para obtener el valor de la UF, se hace un web scraping al sitio del Servicio de
 Clonar el proyecto
 
 ```bash
-  git clone https://link-to-project
+  git clone https://github.com/CesarAOrtiz/UF_api.git
 ```
 
 Ir al directorio del proyecto
 
 ```bash
-  cd my-project
+  cd UF_api
 ```
 
 Crear un entorno virtual
@@ -57,3 +57,7 @@ Abre un navegador web y navega a http://localhost:8000/docs para ver la document
 | Parametros | Tipo     | Descripción                                 |
 | :--------- | :------- | :------------------------------------------ |
 | `date`     | `string` | **Requerido**. Fecha con formato dd-mm-yyyy |
+
+## Recursos
+
+- [Unidad de Fomento](https://www.sii.cl/valores_y_fechas/uf/uf2023.htm)

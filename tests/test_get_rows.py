@@ -19,3 +19,7 @@ class TestGetRows(unittest.TestCase):
         soup = BeautifulSoup(html, "html.parser")
         with self.assertRaises(HTTPException):
             get_rows(soup)
+
+
+if __name__ == '__main__':
+    unittest.main()

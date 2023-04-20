@@ -19,8 +19,9 @@ class TestGetUfForDate(unittest.TestCase):
         # Caso inválido - tabla no encontrada
         html = "<html><body><h1>Test HTML</h1></body></html>"
         soup = BeautifulSoup(html, "html.parser")
-        rows = get_rows(soup)
+
         with self.assertRaises(HTTPException):
+            rows = get_rows(soup)
             get_uf_data(rows)
 
     def test_get_uf_for_date(self):
@@ -28,7 +29,7 @@ class TestGetUfForDate(unittest.TestCase):
 
         # Caso válido
         data = {"1": ["1000", "2000"]}
-        date_obj = datetime.today()
+        date_obj = datetime(2021, 1, 1)
         expected_output = "1000"
         self.assertEqual(get_uf_for_date(data, date_obj), expected_output)
 
@@ -37,3 +38,7 @@ class TestGetUfForDate(unittest.TestCase):
         date_obj = datetime(2021, 1, 2)
         with self.assertRaises(HTTPException):
             get_uf_for_date(data, date_obj)
+
+
+if __name__ == '__main__':
+    unittest.main()

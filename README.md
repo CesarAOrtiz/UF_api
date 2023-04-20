@@ -46,6 +46,12 @@ Este comando iniciará el servidor y lo mantendrá escuchando en http://localhos
 
 Abre un navegador web y navega a http://localhost:8000/docs para ver la documentación de la API y probar los endpoints.
 
+## Ejecutar las pruebas
+
+```bash
+  python -m unittest discover -s tests
+```
+
 ## Referencia del API
 
 #### Obtener unidad de fomento para una fecha

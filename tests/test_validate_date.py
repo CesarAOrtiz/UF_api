@@ -22,3 +22,7 @@ class TestValidateDate(unittest.TestCase):
         date = "10-04-1900"
         with self.assertRaises(HTTPException):
             validate_date(date)
+
+
+if __name__ == '__main__':
+    unittest.main()

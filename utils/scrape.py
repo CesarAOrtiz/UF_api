@@ -36,10 +36,9 @@ def validate_date(date: str) -> datetime:
         raise HTTPException(
             status_code=400, detail="La fecha ingresada no está en el formato esperado (dd-mm-yyyy)")
 
-    max_date = datetime.today()
-    if date_obj < min_date or date_obj > max_date:
+    if date_obj < min_date:
         raise HTTPException(
-            status_code=400, detail=f"La fecha ingresada no está dentro del rango permitido {min_date.strftime('%d-%m-%Y')} - {max_date.strftime('%d-%m-%Y')}")
+            status_code=400, detail=f"La fecha ingresada no está dentro del rango permitido debe ser mayor a {min_date.strftime('%d-%m-%Y')}")
     return date_obj
 
 
